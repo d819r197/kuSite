@@ -1,0 +1,29 @@
+<html>
+<head>
+	<script type="text/javascript">
+		function validateInput(pass, pass2)
+		{
+			let password = document.getElementById("Password").value;
+			let password2 = document.getElementById("Password2").value;
+			console.log(password.length);
+			if(password == password2)
+			{
+				if(password.length < 8)
+				{
+					alert("Passwords are not the same or are less then 8 characters!");
+				}
+			}
+		}
+	</script>
+</head>
+<body>
+	<h1><b><u>Password Validator</b></u></h1>
+	<form>
+		<p>Password</p>
+		<input type = "password" name="pass" id="Password"><br>
+		<p>Varify Password</p>
+		<input type = "password" name="pass2" id="Password2"><br>
+		<input type="button" value="Validate" onclick="validateInput(pass, pass2)"><br>
+	</form>
+</body>
+</html>

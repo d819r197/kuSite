@@ -1,0 +1,45 @@
+<html>
+<head>
+  <script type="text/javascript">
+    let pictures = ['pic1.jpg',
+                    'pic2.jpeg',
+                    'pic3.jpg',
+                    'pic4.jpg',
+                    'pic5.jpg',
+                  ]
+    let currentPicNum = 0;
+    function nextPicture()
+    {
+      if(currentPicNum == 4)
+      {
+        currentPicNum = 0;
+      }
+      else
+      {
+        currentPicNum++;
+      }
+      let pic = document.getElementById("currentPic");
+      pic.src = pictures[currentPicNum];
+    }
+    function previousPicture()
+    {
+      if(currentPicNum == 0)
+      {
+        currentPicNum = 4;
+      }
+      else
+      {
+        currentPicNum--;
+      }
+      let pic = document.getElementById("currentPic");
+      pic.src = pictures[currentPicNum];
+    }
+  </script>
+</head>
+
+<body>
+  <img src="pic1.jpg" id="currentPic" width="200" height="200"><br>
+  <input type="button" value="next" id="nextButton" onclick="nextPicture()">
+  <input type="button" value="previous" id="previousButton" onclick="previousPicture()">
+</body>
+</html>

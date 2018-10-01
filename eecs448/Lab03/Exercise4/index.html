@@ -1,0 +1,49 @@
+<html>
+<head>
+  <script type="text/javascript">
+    function changeDummyText()
+    {
+      let text = document.getElementById("dummyText");
+      let redText = document.getElementById("red").value;
+      let blueText = document.getElementById("blue").value;
+      let greenText = document.getElementById("green").value;
+      let widthText = document.getElementById("width").value;
+      //let textColor = rgb(redText, blueText, greenText);
+
+      let bgred = document.getElementById("bgRed").value;
+      let bgblue = document.getElementById("bgBlue").value;
+      let bggreen = document.getElementById("bgGreen").value;
+      //let bgColor = rgb(bgRed, bgBlue, bgGreen);
+      //console.log(bgColor);
+      text.style.border='thick solid '+ 'rgb(' + redText + ',' + blueText + ',' + greenText + ')';
+      text.style.width=widthText;
+      text.style.backgroundColor = 'rgb(' + bgred + ',' + bgblue + ',' + bggreen + ')';
+    }
+  </script>
+</head>
+<body>
+  <div id="dummyDiv">
+    <h2> The following text can be altered by input units of 0-255 </h2>
+    <p id="dummyText"> This is the dummy text that can be altered by the choices below </p>
+    <form>
+      <h2>Border Changes </h2>
+        <p>Red Value: </p>
+        <input type = "text" id="red"><br>
+        <p>Green Value: </p>
+        <input type = "text" id="green"><br>
+        <p>Blue Value: </p>
+        <input type = "text" id="blue"><br>
+        <p>Width Value: </p>
+        <input type = "text" id="width"><br>
+      <h2>Background Color Changes </h2>
+        <p>Red Value: </p>
+        <input type = "text" id="bgRed"><br>
+        <p>Green Value: </p>
+        <input type = "text" id="bgGreen"><br>
+        <p>Blue Value: </p>
+        <input type = "text" id="bgBlue"><br>
+        <input type="button" value="Submit!" onclick="changeDummyText()"><br>
+    </form>
+  </div>
+</body>
+</html>

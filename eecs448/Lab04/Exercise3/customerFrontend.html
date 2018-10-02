@@ -3,12 +3,19 @@
   <script type="text/javascript">
     function checkInput(username, password)
     {
-      console.log(username + " " + password);
-      if(username != "" && password != "")
+      console.log("[" + username.value + "]" + " " + password.value);
+      if(document.getElementById("username").value != "" && document.getElementById("password").value != "")
       {
-        console.log("valid Input");
-        document.getElementById("inputCreds").style.visibility = "hidden";
-        document.getElementById("masterForm").style.visibility = "visible";
+        classObj1 = document.getElementsByClassName("creds");
+        classObj2 = document.getElementsByClassName("cart");
+        for(x=0; x<classObj1.length; x++)
+        {
+          classObj1[x].style.visibility = "hidden";
+        }
+        for(x=0; x<classObj2.length; x++)
+        {
+          classObj2[x].style.visibility = "visible";
+        }
       }
       else
       {
@@ -21,26 +28,24 @@
         type="text/css"/>
 </head>
 <body>
-  <form id="inputCreds">
-    <input type = "text" name="user" id="username"><br>
-    <input type = "text" name="pass" id="password"><br>
-    <button type="submit" name="submitCreds" onclick="checkInput(user, pass)">Submit<br>
+  <form class = "creds" id="inputCreds">
+    <input class = "creds" type = "text" name="user" id="username"><br>
+    <input class = "creds" type = "text" name="pass" id="password"><br>
+    <button class = "creds" type="button" name="submitCreds" onclick="checkInput(user, pass)">Submit<br>
   </form>
-  <div id="masterForm">
-    <form id="shoppingForm" action="customerBackend.php" method="post">
-        <h3> Pick an Item to Purchase</h3>
-        <input type="radio" name="1a" value="tv"> TV - $200<br>
-        <input type="radio" name="1b" value="computer"> Computer - $150<br>
-        <input type="radio" name="1c" value="xbox"> Xbox - $250 <br>
+  <form class = "cart" id="shoppingForm" action="customerBackend.php" method="post">
+        <h3 class = "cart" > Pick an Item to Purchase</h3>
+        <input class = "cart" type="radio" name="1a" value="tv"><p class = "cart"> TV - $200</p><br>
+        <input class = "cart" type="radio" name="1b" value="computer"><p class = "cart"> Computer - $150</p><br>
+        <input class = "cart" type="radio" name="1c" value="xbox"><p class = "cart"> Xbox - $250</p><br>
 
-        <h3> Pick a shipping prefrence</h3>
-        <input type="radio" name="1a" value="free"> Free 7 Day Shipping<br>
-        <input type="radio" name="1b" value="threeDay"> $5 Three Day Shipping<br>
-        <input type="radio" name="1c" value="overnight"> $50 Overnight Shipping<br>
+        <h3 class = "cart"> Pick a shipping prefrence</h3>
+        <input class = "cart" type="radio" name="2a" value="free"><p class = "cart"> Free 7 Day Shipping</p><br>
+        <input class = "cart" type="radio" name="2b" value="threeDay"><p class = "cart"> $5 Three Day Shipping</p><br>
+        <input class = "cart" type="radio" name="2c" value="overnight"><p class = "cart"> $50 Overnight Shipping</p><br>
 
-      <button type="submit" name="submitForm">Submit<br>
-      <button type="reset" name="resetForm">Reset<br>
-    </form>
-  </div>
+      <button class = "cart" type="submit" name="submitForm">Submit<br>
+      <button class = "cart" type="reset" name="resetForm">Reset<br>
+  </form>
 </body>
 </html>

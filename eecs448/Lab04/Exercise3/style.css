@@ -1,0 +1,9 @@
+#masterForm
+{
+  visibility: hidden;
+}
+
+#inputCreds
+{
+  visibility: visible;
+}

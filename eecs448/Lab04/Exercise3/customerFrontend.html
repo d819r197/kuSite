@@ -1,0 +1,46 @@
+<html>
+<head>
+  <script type="text/javascript">
+    function checkInput(username, password)
+    {
+      console.log(username + " " + password);
+      if(username != "" && password != "")
+      {
+        console.log("valid Input");
+        document.getElementById("inputCreds").style.visibility = "hidden";
+        document.getElementById("masterForm").style.visibility = "visible";
+      }
+      else
+      {
+          alert("Please input a username and password");
+      }
+    }
+  </script>
+  <link href="style.css"
+        rel="stylesheet"
+        type="text/css"/>
+</head>
+<body>
+  <form id="inputCreds">
+    <input type = "text" name="user" id="username"><br>
+    <input type = "text" name="pass" id="password"><br>
+    <button type="submit" name="submitCreds" onclick="checkInput(user, pass)">Submit<br>
+  </form>
+  <div id="masterForm">
+    <form id="shoppingForm" action="customerBackend.php" method="post">
+        <h3> Pick an Item to Purchase</h3>
+        <input type="radio" name="1a" value="tv"> TV - $200<br>
+        <input type="radio" name="1b" value="computer"> Computer - $150<br>
+        <input type="radio" name="1c" value="xbox"> Xbox - $250 <br>
+
+        <h3> Pick a shipping prefrence</h3>
+        <input type="radio" name="1a" value="free"> Free 7 Day Shipping<br>
+        <input type="radio" name="1b" value="threeDay"> $5 Three Day Shipping<br>
+        <input type="radio" name="1c" value="overnight"> $50 Overnight Shipping<br>
+
+      <button type="submit" name="submitForm">Submit<br>
+      <button type="reset" name="resetForm">Reset<br>
+    </form>
+  </div>
+</body>
+</html>

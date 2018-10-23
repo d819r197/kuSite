@@ -13,22 +13,22 @@
 
   printf("Starting ADD USER");
 
+  $userInput = $_POST["user"];
+
+  if ($userInput == "") {
+    echo "<p>Error: no input</p><br>";
+    return;
+  }
+
   $userQuery = "SELECT * FROM `Users` WHERE `user_id`='" . $user . "';";
   $userIs = $mysqli->query($query);
   $numUsersFound = $userIs->num_rows;
 
   if ($numUsersFound > 0) {
-    $newPost = 
-
-    if ($mysql_connection->query($query)) {
-        echo "<p>Post was Added</p>";
-    }
-    else {
-        echo "<p>Error</p>";
-    }
+    echo "<p>Error: User already exist.</p><br>";
   }
   else {
-    echo "<p>User doesn't exist.</p><br>";
+    $newUser = "INSERT INTO `Users` (user_id) VALUES ('" . $user . "');";
   }
 
 /* close connection */

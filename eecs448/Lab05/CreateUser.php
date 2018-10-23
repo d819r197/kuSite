@@ -4,14 +4,14 @@
 
   /* check connection */
   if (!$mysqli->connect_errno) {
-      printf("Connection Success!");
+      printf("Connection Success!\n");
   }
   else {
     printf("Connect failed: %s\n", $mysqli->connect_error);
     exit();
   }
 
-  printf("Starting ADD USER");
+  printf("Starting ADD USER\n");
 
   $userInput = $_POST["user"];
 
@@ -23,17 +23,18 @@
   $userQuery = "SELECT * FROM `Users` WHERE `user_id`='" . $user . "';";
   $userIs = $mysqli->query($query);
   $numUsersFound = $userIs->num_rows;
-
+    printf("num of user: " + $numUsersFound);
+    
   if ($numUsersFound > 0) {
     echo "<p>Error: User already exist.</p><br>";
   }
   else {
     $newUser = "INSERT INTO `Users` (user_id) VALUES ('" . $user . "');";
-    printf("User: " + $user + " was added");
+    printf("User: " + $user + " was added\n");
   }
 
 /* close connection */
 $mysqli->close();
 
-  printf("done!");
+  printf("done!\n");
 ?>

@@ -21,19 +21,21 @@
   }
 
   $userQuery = "SELECT * FROM `Users` WHERE `user_id`='" . $userInput . "';";
-  $userIs = $mysqli->query($query);
+  $userIs = $mysqli->query($userQuery);
   $numUsersFound = $userIs->num_rows;
   
   if ($numUsersFound > 0) {
     echo "<p>Error: User already exist.</p><br>";
   }
   else {
+    echo "<p>Number of Users with Username: " . $userInput . " is: " . $numUsersFound . "</p>";
+
     $newUser = "INSERT INTO `Users` (user_id) VALUES ('" . $userInput . "');";
-    if ($mysqli->query($userQuery)) {
-      echo "<p>" . $userInput . " has been created!";
+    if ($mysqli->query($newUser)) {
+      echo "<p>" . $userInput . " has been created!</p>";
     }
     else {
-      echo "Error: " . $userQuery . " failed!<br>";
+      echo "<p>Error: " . $newUser . " failed!</p><br>";
     }
   }
 

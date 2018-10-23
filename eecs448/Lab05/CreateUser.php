@@ -29,6 +29,7 @@
   }
   else {
     $newUser = "INSERT INTO `Users` (user_id) VALUES ('" . $user . "');";
+    printf("User: " + $user + " was added");
   }
 
 /* close connection */

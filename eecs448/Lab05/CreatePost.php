@@ -11,7 +11,7 @@
     exit();
   }
 
-  printf("Starting ADD USER\n");
+  printf("\nStarting ADD Post\n");
 
   $userInput = $_POST["user"];
   $postInput = $_POST["post"];
@@ -39,7 +39,7 @@
     }
   }
   else {
-    echo "<p>User doesn't exist.</p><br>";
+    echo "<p>User doesn't exist.</p>";
   }
 
 /* close connection */

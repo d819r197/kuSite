@@ -3,8 +3,28 @@
 		<?php
       echo "<h1> Select a user to see their posts </h1>
             <select>";
+              $mysqli = new mysqli("mysql.eecs.ku.edu", "d819r197", "Koo3Kee4", "d819r197");
 
-      echo "</select>"; 
+              /* check connection */
+              if (!$mysqli->connect_errno) {
+                 printf("Connection Success!\n");
+              }
+              else {
+               printf("Connect failed: %s\n", $mysqli->connect_error);
+               exit();
+              }
+
+              $userQuery = "SELECT * FROM `Users`;";
+              $usersIs = $mysqli->query($userQuery);
+
+              while($rowOfUsers = $usersIs->fetch_assoc()) {
+                echo "<option>" . $rowOfUsers["User_Id"] . "</option>";
+              }
+
+              /* close connection */
+              $mysqli->close();
+
+      echo "</select>";
     ?>
 
 </head>

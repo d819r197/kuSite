@@ -18,7 +18,7 @@ echo "<table>";
 while($rowOfUsers = $usersIs->fetch_assoc()) {
   echo "<td>" . $rowOfUsers["User_Id"] . "</td>";
 }
-// close table tag
+
 echo "</table>";
 
 /* close connection */

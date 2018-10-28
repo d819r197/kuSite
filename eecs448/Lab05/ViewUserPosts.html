@@ -2,7 +2,7 @@
 <head>
 		<?php
       echo "<h1> Select a user to see their posts </h1>
-            <select>";
+            <select id="userSelect">";
               $mysqli = new mysqli("mysql.eecs.ku.edu", "d819r197", "Koo3Kee4", "d819r197");
 
               /* check connection */
@@ -18,13 +18,15 @@
               $usersIs = $mysqli->query($userQuery);
 
               while($rowOfUsers = $usersIs->fetch_assoc()) {
-                echo "<option>" . $rowOfUsers["User_Id"] . "</option>";
+                echo "<option value='" . $rowOfUsers["User_id"] "'>" . $rowOfUsers["User_Id"] . "</option>";
               }
 
               /* close connection */
               $mysqli->close();
 
       echo "</select>";
+      echo "<button type="submit" onclick="ViewUserPosts.php">Get User Posts</button>";
+
     ?>
 
 </head>

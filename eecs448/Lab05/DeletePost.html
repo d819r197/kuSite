@@ -15,6 +15,7 @@
 
     <?php
               $mysqli = new mysqli("mysql.eecs.ku.edu", "d819r197", "Koo3Kee4", "d819r197");
+              $counter = 0;
 
               /* check connection */
               if (!$mysqli->connect_errno) {
@@ -30,7 +31,7 @@
               $usersIs = $mysqli->query($userQuery);
 
                 while($rowOfUsers = $usersIs->fetch_assoc()) {
-	          
+
 	      /*insert user posts to table */
               $postQuery = "SELECT * FROM `Posts` WHERE `Author_Id`='" . $rowOfUsers["Author_Id"] . "';";
               $postIs = $mysqli->query($postQuery);
@@ -47,9 +48,10 @@
                   echo "<input type='checkbox' name='" .$rowOfPosts["Post_Id"] . "' > Delete";
 		  echo "<td>";
                   echo "</tr>";
+                  $counter++;
 		}
               }
-
+              echo "<h3 name='numOfPosts' value='" . $counter . "'>Number of Posts: " . $counter ."</h3>";
               /* close connection */
               $mysqli->close();
 

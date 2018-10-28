@@ -24,20 +24,34 @@
                exit();
               }
 
+              /*insert user id to table */
               $userQuery = "SELECT * FROM `Users`;";
               $usersIs = $mysqli->query($userQuery);
 
-              while($rowOfUsers = $usersIs->fetch_assoc()) {
-                echo "<tr><td"
-                echo "<option value='" . $rowOfUsers["User_id"] "'>" . $rowOfUsers["User_Id"] . "</option>";
-              }
+              <tr>
+                while($rowOfUsers = $usersIs->fetch_assoc()) {
+                  echo "<td>";
+                  echo $rowOfUsers["User_Id"] ;
+                  echo "<td>"
+                }
+              </tr>
+
+              /*insert user posts to table */
+              $postQuery = "SELECT * FROM `Users`;";
+              $postIs = $mysqli->query($postQuery);
+
+              <tr>
+                while($rowOfPosts = $postIs->fetch_assoc()) {
+                  echo "<td>";
+                  echo $rowOfPosts["content"] ;
+                  echo "<td>"
+                }
+              </tr>
 
               /* close connection */
               $mysqli->close();
 
-
   ?>
-
   </table>
 </body>
 </html>

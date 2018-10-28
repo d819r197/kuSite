@@ -23,7 +23,7 @@
               $usersIs = $mysqli->query($userQuery);
 
               while($rowOfUsers = $usersIs->fetch_assoc()) {
-                echo "<option value='" . $rowOfUsers["User_id"] "'>" . $rowOfUsers["User_Id"] . "</option>";
+                echo "<option>" . $rowOfUsers["content"] . "</option>";
               }
 
               /* close connection */

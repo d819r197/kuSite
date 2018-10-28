@@ -11,14 +11,14 @@ else {
 }
 
 $userQuery = "SELECT * FROM `Users`;";
-$usersIs = $mysqli->query($query);
+$usersIs = $mysqli->query($userQuery);
 
 echo "<table>";
 
 while($rowOfUsers = $usersIs->fetch_assoc()) {
-  echo "<td>" . $rowOfUsers["user_id"] . "</td>";
-  $count++;
-}
+  echo "<td>" . $rowOfUsers["User_Id"] . "</td>";
+} 
+
 // close table tag
 echo "</table>";
 

@@ -16,7 +16,7 @@ $postIs = $mysqli->query($postQuery);
 echo "<table>";
 
 while($rowOfPosts = $postIs->fetch_assoc()) {
-  echo "<td>" . $rowOfPosts["Author_Id"] . "</td><br>";
+  echo "<td>" . $rowOfPosts["content"] . "</td><br>";
 }
 
 echo "</table>";

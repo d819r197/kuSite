@@ -4,6 +4,7 @@
 
 </head>
 <body>
+  <form id="deletePosts" action="DeletePost.php" method="post">
   <h1>Delete Posts?</h1>
   <table style="width:100%;">
     <tr>
@@ -25,33 +26,36 @@
               }
 
               /*insert user id to table */
-              $userQuery = "SELECT * FROM `Users`;";
+              $userQuery = "SELECT * FROM `Posts`;";
               $usersIs = $mysqli->query($userQuery);
 
-              <tr>
                 while($rowOfUsers = $usersIs->fetch_assoc()) {
-                  echo "<td>";
-                  echo $rowOfUsers["User_Id"] ;
-                  echo "<td>"
-                }
-              </tr>
-
-              /*insert user posts to table */
-              $postQuery = "SELECT * FROM `Users`;";
+	          
+	      /*insert user posts to table */
+              $postQuery = "SELECT * FROM `Posts` WHERE `Author_Id`='" . $rowOfUsers["Author_Id"] . "';";
               $postIs = $mysqli->query($postQuery);
 
-              <tr>
                 while($rowOfPosts = $postIs->fetch_assoc()) {
+                  echo "<tr>";
                   echo "<td>";
+                  echo $rowOfUsers["Author_Id"] ;
+                  echo "<td>";
+		  echo "<td>";
                   echo $rowOfPosts["content"] ;
-                  echo "<td>"
-                }
-              </tr>
+                  echo "<td>";
+		  echo "<td>";
+                  echo "<input type='checkbox' name='" .$rowOfPosts["Post_Id"] . "' > Delete";
+		  echo "<td>";
+                  echo "</tr>";
+		}
+              }
 
               /* close connection */
               $mysqli->close();
 
   ?>
   </table>
+  <button type="submit" name="submitForm">Delete Selected Posts<br>
+  </form>
 </body>
 </html>

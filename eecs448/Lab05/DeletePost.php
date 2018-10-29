@@ -1,6 +1,6 @@
 <?php
 $mysqli = new mysqli("mysql.eecs.ku.edu", "d819r197", "Koo3Kee4", "d819r197");
-$counter = $_POST("numOfPosts");
+
 /* check connection */
 if (!$mysqli->connect_errno) {
    printf("Connection Success!\n");
@@ -10,16 +10,20 @@ else {
  exit();
 }
 
-echo "<h3 name='numOfPosts' value='" . $counter . "'>Number of Posts: " . $counter ."</h3>";
+$currentPostNum = 0;
+echo $currentPostNum;
 
 $selectedUser = $_POST["userSelect"];
-$postQuery = "SELECT * FROM `Posts` WHERE `Author_Id`='" . $selectedUser . "';";
+$postQuery = "SELECT * FROM `Posts`;";
 $postIs = $mysqli->query($postQuery);
 
-echo "<table>";
+echo "Deleting...";
 
 while($rowOfPosts = $postIs->fetch_assoc()) {
-  echo "<td>" . $rowOfPosts["Author_Id"] . "</td><br>";
+  if(isset($_POST [$currentPostNum])) {
+  echo "Deleting->" . $rowOfPosts["Post_Id"] . "..Done.";
+  }
+  $currentPostNum++;
 }
 
 echo "</table>";

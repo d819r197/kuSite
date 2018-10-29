@@ -25,7 +25,6 @@
                printf("Connect failed: %s\n", $mysqli->connect_error);
                exit();
               }
-
               /*insert user id to table */
               $userQuery = "SELECT * FROM `Posts`;";
               $usersIs = $mysqli->query($userQuery);
@@ -45,7 +44,7 @@
                   echo $rowOfPosts["content"] ;
                   echo "<td>";
 		  echo "<td>";
-                  echo "<input type='checkbox' name='" .$rowOfPosts["Post_Id"] . "' > Delete";
+                  echo "<input type='checkbox' name='" . $counter .  "' value='" .$rowOfPosts["Post_Id"] . "' > Delete";
 		  echo "<td>";
                   echo "</tr>";
                   $counter++;

@@ -4,15 +4,6 @@
 
 </head>
 <body>
-  <form id="deletePosts" action="DeletePost.php" method="post">
-  <h1>Delete Posts?</h1>
-  <table style="width:100%;">
-    <tr>
-      <th>Authors</th>
-      <th>Posts</th>
-      <th>Delete?</th>
-    </tr>
-
     <?php
               $mysqli = new mysqli("mysql.eecs.ku.edu", "d819r197", "Koo3Kee4", "d819r197");
               $counter = 0;
@@ -25,6 +16,16 @@
                printf("Connect failed: %s\n", $mysqli->connect_error);
                exit();
               }
+
+                echo "<form id="deletePosts" action="DeletePost.php" method="post">";
+                echo "<h1>Delete Posts?</h1>";
+                echo "<table style="width:100%;">";
+                  echo "<tr>";
+                    echo "<th>Authors</th>";
+                    echo "<th>Posts</th>";
+                  echo "<th>Delete?</th>";
+                  echo "</tr>";
+
               /*insert user id to table */
               $userQuery = "SELECT * FROM `Posts`;";
               $usersIs = $mysqli->query($userQuery);
@@ -51,12 +52,14 @@
 		}
               }
               echo "<h3 name='numOfPosts' value='" . $counter . "'>Number of Posts: " . $counter ."</h3>";
+              echo "</table>";
+              echo "<button type="submit" name="submitForm">Delete Selected Posts<br>";
+              echo "</form>";
+
               /* close connection */
               $mysqli->close();
 
   ?>
-  </table>
-  <button type="submit" name="submitForm">Delete Selected Posts<br>
-  </form>
+
 </body>
 </html>

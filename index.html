@@ -1,14 +1,79 @@
 <html>
 <head>
-  <script type="text/javascript">
-  </script>
+  <link rel="stylesheet" type="text/css" href="CSS/normalize.css">
+  <link rel="stylesheet" type="text/css" href="CSS/nav.css">
+  <link rel="stylesheet" type="text/css" href="CSS/content.css">
 </head>
 <body>
-  <div id="profileBlock">
-
+  <div class="navBar">
+    <div id="profilePicture">
+      <img src="images/profilePic.jpeg"></img>
+    </div>
+    <div id="navMenu">
+      <div id="aboutOption" class="menuDiv">
+        <a href=".">About</a>
+      </div>
+      <div id="experienceSkillsOption" class="menuDiv">
+        <a href="">Experience and Skills</a>
+      </div>
+      <div id="otheProjectsOption" class="menuDiv">
+        <a href="">Projects</a>
+      </div>
+      <div id="contactOption" class="menuDiv">
+        <a href="">Contact</a>
+      </div>
+    </div>
   </div>
-  <div id="contentBlock">
-    <a href="eecs448/index.html"><b>EECS 448 Labs/Projects</b></a>
+
+  <!-- About -->
+  <div id="contentWrapper">
+    <div id="aboutBlock" class="contentBlock" style="background-color: #bfbfbf">
+      <div class="title">
+        <h1>ABOUT ME </h1>
+        <h3>A FEW THINGS ABOUT ME</h3>
+      </div>
+      <div class="content">
+        <p> Words about me. </p>
+      </div>
+    </div>
+
+    <!-- Experience and Skills -->
+    <div id="expBlock" class="contentBlock" style="background-color: #e6e6e6">
+      <div class="title">
+        <h1>EXPERIENCE AND SKILLS </h1>
+        <h3>MY EXPERIENCE AND SKILLS</h3>
+      </div>
+      <div class="content">
+        <h5>Experience</h5>
+        <p> My Experience. </p>
+        <h5>Skills</h5>
+        <p> My Skils. </p>
+      </div>
+    </div>
+
+    <!-- Other Projects -->
+    <div id="projectsBlock" class="contentBlock" style="background-color: #bfbfbf">
+      <div class="title">
+        <h1>MY PROJECTS </h1>
+        <h3>A LIST OF MY PROJECTS</h3>
+      </div>
+      <div class="content">
+        <p> Some projects </p>
+        <a href="eecs448/index.html"><b>EECS 448 Labs/Projects</b></a>
+      </div>
+    </div>
+
+      <!-- Contact -->
+      <div id="contactBlock" class="contentBlock" style="background-color: #e6e6e6">
+        <div class="title">
+          <h1>CONTACT ME </h1>
+        </div>
+        <div class="content">
+          <a href = "mailto:brieschick34@gmail.com?subject = Contact&body = Message">
+            Contact Me.
+          </a>
+        </div>
+      </div>
   </div>
 </body>
 </body>

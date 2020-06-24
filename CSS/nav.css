@@ -1,0 +1,35 @@
+.navBar {
+  position: fixed;
+  background: #d14715;
+  padding: 2em;
+  margin: 0px;
+  border: 1px solid black;
+  width: 10%;
+  height: 100%;
+}
+
+.navBar img {
+  display: block;
+  border-radius: 200px;
+  border: 5px solid #e95420;
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+}
+
+.navBar a {
+  display: block;
+  padding: 12px;
+  color: white;
+  text-decoration: none;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.navBar a:hover {
+  font-weight: bold;
+}
+
+#navMenu {
+  margin-top: 25px;
+}

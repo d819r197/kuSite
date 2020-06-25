@@ -13,6 +13,31 @@ body {
   border-color: black;
 }
 
+#contactBlock {
+  height: 300px;
+  text-align: center;
+}
+
+.contactIcons {
+  position: relative;
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+  float: left;
+  margin-left: 15%;
+  border-radius: 100%;
+  border: 5px solid #e95420;
+  background-repeat: no-repeat;
+  background-size: contain;
+  cursor: pointer;
+}
+
+.contactIcons h3 {
+  text-align: center;
+  position: relative;
+  top: 100px;
+}
+
 .contentBlock {
   position: relative;
   height: auto;

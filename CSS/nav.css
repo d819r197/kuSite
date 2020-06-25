@@ -1,6 +1,6 @@
 .navBar {
   position: fixed;
-  background: #d14715;
+  background: #15aed1;
   padding: 2em;
   margin: 0px;
   border: 1px solid black;
@@ -20,7 +20,7 @@
 .navBar a {
   display: block;
   padding: 12px;
-  color: white;
+  color: #e95420;
   text-decoration: none;
   text-align: center;
   margin-top: 20px;

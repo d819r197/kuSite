@@ -1,13 +1,22 @@
 body {
-  background-image: url("../images/bgfull.jpg");
+  overflow-x: hidden;
+}
+
+#homeBanner {
+  position: relative;
+  background-image: url("../images/bluebg.png");
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: right;
+  height: 500px;
+  width: 100%;
+  left: 100px;
+  z-index: -1;
 }
 
 #contentWrapper {
   position: relative;
   width: 90%;
-  top: 350px;
   float: right;
   border-width: 1px;
   border-color: black;
@@ -16,6 +25,10 @@ body {
 #contactBlock {
   height: 300px;
   text-align: center;
+}
+
+#phoneNum {
+  margin-top: -20px;
 }
 
 .contactIcons {

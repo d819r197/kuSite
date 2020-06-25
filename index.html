@@ -3,6 +3,7 @@
   <link rel="stylesheet" type="text/css" href="CSS/normalize.css">
   <link rel="stylesheet" type="text/css" href="CSS/nav.css">
   <link rel="stylesheet" type="text/css" href="CSS/content.css">
+  <script src="JavaScript/contact.js"></script>
 </head>
 <body>
   <div class="navBar">
@@ -11,18 +12,22 @@
     </div>
     <div id="navMenu">
       <div id="aboutOption" class="menuDiv">
-        <a href=".">About</a>
+        <a href="#aboutBlock">About</a>
       </div>
       <div id="experienceSkillsOption" class="menuDiv">
-        <a href="">Experience and Skills</a>
+        <a href="#expBlock">Experience and Skills</a>
       </div>
-      <div id="otheProjectsOption" class="menuDiv">
-        <a href="">Projects</a>
+      <div id="otherProjectsOption" class="menuDiv">
+        <a href="#projectsBlock">Projects</a>
       </div>
       <div id="contactOption" class="menuDiv">
-        <a href="">Contact</a>
+        <a href="#contactBlock">Contact</a>
       </div>
     </div>
+  </div>
+
+  <div id="homeBanner" class="contentBlock">
+
   </div>
 
   <!-- About -->
@@ -72,19 +77,16 @@
           <div class = "contactIcons" style="background-image: url('images/icons/emailbw.png')" onclick="location.href='mailto:brieschick34@gmail.com?subject = Contact&body = Message';">
             <h3>EMAIL</h3>
           </div>
-          <div id="contactPhone" class = "contactIcons" style="background-image: url('images/icons/phonebw.png')">
+          <div id="contactPhone" class = "contactIcons" style="background-image: url('images/icons/phonebw.png')" onclick="phoneClick()">
             <h3>PHONE</h3>
-            <h5>(913) 731 - 6043 </h5>
+            <h5 id="phoneNum" style="visibility: hidden">(913) 731 - 6043 </h5>
           </div>
-          <div class = "contactIcons" style="background-image: url('images/icons/linkedinbw.png')">
+          <div class = "contactIcons" style="background-image: url('images/icons/linkedinbw.png')" onclick="window.open('https://www.linkedin.com/in/blake-rieschick-1320b49/','mywindow');">
             <h3>LINKEDIN</h3>
           </div>
-          <div class = "contactIcons" style="background-image: url('images/icons/github.png')">
+          <div class = "contactIcons" style="background-image: url('images/icons/github.png')" onclick="window.open('https://github.com/d819r197','mywindow');">
             <h3>GITHUB</h3>
           </div>
-          <a href = "mailto:brieschick34@gmail.com?subject = Contact&body = Message">
-            Contact Me.
-          </a>
         </div>
       </div>
   </div>

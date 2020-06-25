@@ -25,10 +25,12 @@ body {
   left: 4.1em;
 }
 
+
 #contactBlock {
   height: 300px;
   text-align: center;
 }
+
 
 #phoneNum {
   margin-top: -20px;
@@ -58,6 +60,12 @@ body {
 }
 
 .contentBlock {
+}
+
+.contentBlock table {
+  margin: 20px;
+  width: 100%;
+  text-align: center;
 }
 
 .title {
